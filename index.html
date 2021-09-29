@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project 81</title>
+        <style>
+            #c{
+                border: 3px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Olympic Logo</h1>
+        <canvas id="c" width="800px" height="400px"></canvas>
+    </body>
+    <script>
+        var s= 2;
+        var ctx = document.getElementById("c").getContext("2d");
+        var circle = function(x, y, color){
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.arc(x*s, y*s, 50*s, 0,  2*Math.PI);
+            ctx.stroke();
+        }
+        var data = [
+            {
+                x: 100,
+                y: 100,
+                c:"#0000ff"
+            },
+            {
+                x: 170,
+                y: 100,
+                c:"#000000"
+            },
+            {
+                x: 240,
+                y: 100,
+                c:"#ff0000"
+            },
+            {
+                x: 135,
+                y: 135,
+                c:"#ffff00"
+            },
+            {
+                x: 205,
+                y: 135,
+                c:"#00ff00"
+            },
+        ];
+        for(var i=0; i<data.length; i++){
+            var di = data[i];
+            circle(di.x, di.y, di.c);
+        }
+    </script>
+</html>
